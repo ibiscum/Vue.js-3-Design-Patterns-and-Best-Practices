@@ -17,7 +17,8 @@ self.onmessage=(event)=>{
         payload=data.payload
      ;
     services.forEach(service=>{
-        if(service[data.command]){
+        if (Object.prototype.hasOwnProperty.call(service, data.command) &&
+            typeof service[data.command] === 'function') {
             service[data.command](payload).then(result=>{
                 sendRequest(data.id, true, result)
             }, err=>{
