@@ -19,20 +19,20 @@ const
 </script>
 
 <template>
-    <div class="summary-wrapper">
-        <div class="w3-light-gray">
-            <strong>Pending</strong>
-            <h2>{{_status?.not_started}}</h2>
-        </div>
-        <div class="w3-teal">
-            <strong>In progress</strong>
-            <h2>{{_status?.in_progress}}</h2>
-        </div>
-        <div class="w3-green">
-            <strong>Completed</strong>
-            <h2>{{_status?.completed}}</h2>
-        </div>
+  <div class="summary-wrapper">
+    <div class="w3-light-gray">
+      <strong>Pending</strong>
+      <h2>{{ _status?.not_started }}</h2>
     </div>
+    <div class="w3-teal">
+      <strong>In progress</strong>
+      <h2>{{ _status?.in_progress }}</h2>
+    </div>
+    <div class="w3-green">
+      <strong>Completed</strong>
+      <h2>{{ _status?.completed }}</h2>
+    </div>
+  </div>
 </template>
 
 <style scoped>

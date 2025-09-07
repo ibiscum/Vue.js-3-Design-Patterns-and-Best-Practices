@@ -16,24 +16,33 @@ function closeModal(accept = false) {
 </script>
 
 <template>
-    <div class="viewport-wrapper " v-if="_show">
-        <div class="dialog-wrapper w3-animate-top">
-            <header class="w3-indigo w3-padding">
-                {{$props.title}}
-            </header>
-            <main class="w3-white w3-padding">
-                <slot></slot>
-            </main>
-            <footer class="w3-right-align w3-indigo">
-                <button class="w3-button" @click="closeModal(true)">
-                    Accept
-                </button>
-                <button class="w3-button" @click="closeModal(false)">
-                    Cancel
-                </button>
-            </footer>
-        </div>
+  <div
+    v-if="_show"
+    class="viewport-wrapper "
+  >
+    <div class="dialog-wrapper w3-animate-top">
+      <header class="w3-indigo w3-padding">
+        {{ $props.title }}
+      </header>
+      <main class="w3-white w3-padding">
+        <slot />
+      </main>
+      <footer class="w3-right-align w3-indigo">
+        <button
+          class="w3-button"
+          @click="closeModal(true)"
+        >
+          Accept
+        </button>
+        <button
+          class="w3-button"
+          @click="closeModal(false)"
+        >
+          Cancel
+        </button>
+      </footer>
     </div>
+  </div>
 </template>
 
 <style scoped>

@@ -17,15 +17,18 @@ function showModal() {
 </script>
 
 <template>
-    <div class="app">
-        <button @click="showModal">
-            Show modal
-        </button>
-        <div>{{_result}}</div>
-        <Modal name="myModal" title="Modal example">
-            Some important content here
-        </Modal>
-    </div>
+  <div class="app">
+    <button @click="showModal">
+      Show modal
+    </button>
+    <div>{{ _result }}</div>
+    <Modal
+      name="myModal"
+      title="Modal example"
+    >
+      Some important content here
+    </Modal>
+  </div>
 </template>
 
 <style scoped>

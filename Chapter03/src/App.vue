@@ -3,9 +3,9 @@ import ToDos from "@components/ToDos.vue"
 </script>
 
 <template>
-    <div class="app w3-blue-gray">
-        <ToDos />
-    </div>
+  <div class="app w3-blue-gray">
+    <ToDos />
+  </div>
 </template>
 
 <style scoped>
