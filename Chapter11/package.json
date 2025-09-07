@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "eslint": "^9.35.0",
+    "eslint-plugin-vue": "^10.4.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {

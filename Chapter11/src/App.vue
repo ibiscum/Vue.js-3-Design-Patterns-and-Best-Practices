@@ -10,28 +10,27 @@ const
 </script>
 
 <template>
-<div>
+  <div>
     <h1>Chapter 11 - UI and UX patterns</h1>
     <h2>Examples</h2>
     <section>
-        <h3>Toggle switch</h3>
-        <Toggle v-model="_feature_enabled"></Toggle>
-        <span> Value read: {{ _feature_enabled }}</span>
+      <h3>Toggle switch</h3>
+      <Toggle v-model="_feature_enabled" />
+      <span> Value read: {{ _feature_enabled }}</span>
     </section>
 
     <section>
-        <h3>A spinner with text</h3>
-        <Spinner caption="System working..."></Spinner>
+      <h3>A spinner with text</h3>
+      <Spinner caption="System working..." />
     </section>
 
     <section>
-        <h3>An infinite scroller</h3>
-        <div class="limit-viewport">
-            <InfiniteScroller></InfiniteScroller>
-        </div>
+      <h3>An infinite scroller</h3>
+      <div class="limit-viewport">
+        <InfiniteScroller />
+      </div>
     </section>
-    
-</div>
+  </div>
 </template>
 
 <style scoped>

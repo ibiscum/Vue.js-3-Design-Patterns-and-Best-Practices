@@ -1,5 +1,7 @@
 # Vue.js 3 Design Patterns and Best Practices
 
+[![CodeQL Advanced](https://github.com/ibiscum/Vue.js-3-Design-Patterns-and-Best-Practices/actions/workflows/codeql.yml/badge.svg)](https://github.com/ibiscum/Vue.js-3-Design-Patterns-and-Best-Practices/actions/workflows/codeql.yml)
+
 <a href="https://www.packtpub.com/product/vuejs-3-design-patterns-and-best-practices/9781803238074"><img src="https://content.packt.com/B18602/cover_image_small.jpg" alt="Vue.js 3 Design Patterns and Best Practices" height="256px" align="right"></a>
 
 This is the code repository for [Vue.js 3 Design Patterns and Best Practices](https://www.packtpub.com/product/vuejs-3-design-patterns-and-best-practices/9781803238074), published by Packt.

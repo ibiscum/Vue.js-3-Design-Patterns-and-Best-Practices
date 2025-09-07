@@ -19,9 +19,12 @@ _value.value = $props.modelValue;
 </script>
 
 <template>
-
-    <input type="checkbox" class="toggle" v-model="_value" @change="$emit('update:modelValue', _value)">
-
+  <input
+    v-model="_value"
+    type="checkbox"
+    class="toggle"
+    @change="$emit('update:modelValue', _value)"
+  >
 </template>
 
 <style scoped>

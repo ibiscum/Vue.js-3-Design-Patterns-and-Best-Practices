@@ -5,14 +5,14 @@
   Usage:
         <Spinner caption="some text"></Spinner>
  */
-const $props=defineProps(['caption'])
+const $props=defineProps({caption: {type: String, default: 'caption'}})
 </script>
 
 <template>
-    <div>
-        <span class="spinner"></span>
-        {{ $props.caption }}
-    </div>    
+  <div>
+    <span class="spinner" />
+    {{ $props.caption }}
+  </div>    
 </template>
 
 <style scoped>

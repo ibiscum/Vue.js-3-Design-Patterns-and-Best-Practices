@@ -16,12 +16,15 @@ function triggerEvent() {
 </script>
 
 <template>
-    <div>
-        <div v-for="elem in _max_value" :key="elem">
-            item {{ elem }}
-        </div>
-        <div ref="_scroll_watcher"></div>
+  <div>
+    <div
+      v-for="elem in _max_value"
+      :key="elem"
+    >
+      item {{ elem }}
     </div>
+    <div ref="_scroll_watcher" />
+  </div>
 </template>
 
 <style scoped>
