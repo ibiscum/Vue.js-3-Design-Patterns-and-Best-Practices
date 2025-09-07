@@ -19,33 +19,48 @@ function sendData(){
 </script>
 
 <template>
-    <div class="padded network-wrapper">
-        <section>
-            <h4>Text to send</h4>
-            <div class="padded flex-container gap">
-                <label>
-                    <input type="radio" value="GET" name="method" v-model="_method">
-                    <span>GET Method</span>
-                </label>
-                <label>
-                    <input type="radio" value="POST" name="method" v-model="_method">
-                    <span>POST Method</span>
-                </label>
-            </div>
-            <div class="flex-container">
-                <input type="text" v-model="_data_to_send" placeholder="Type text to mirror...">
-                <button @click="sendData()">Send</button>
-            </div>
-        </section>
+  <div class="padded network-wrapper">
+    <section>
+      <h4>Text to send</h4>
+      <div class="padded flex-container gap">
+        <label>
+          <input
+            v-model="_method"
+            type="radio"
+            value="GET"
+            name="method"
+          >
+          <span>GET Method</span>
+        </label>
+        <label>
+          <input
+            v-model="_method"
+            type="radio"
+            value="POST"
+            name="method"
+          >
+          <span>POST Method</span>
+        </label>
+      </div>
+      <div class="flex-container">
+        <input
+          v-model="_data_to_send"
+          type="text"
+          placeholder="Type text to mirror..."
+        >
+        <button @click="sendData()">
+          Send
+        </button>
+      </div>
+    </section>
 
-        <section>
-            <h4>Data received from server</h4>
-            <div class="padded data-mirror">
-                {{ _data_received }}
-            </div>
-        </section>
-    </div>
-
+    <section>
+      <h4>Data received from server</h4>
+      <div class="padded data-mirror">
+        {{ _data_received }}
+      </div>
+    </section>
+  </div>
 </template>
 
 <style scoped>

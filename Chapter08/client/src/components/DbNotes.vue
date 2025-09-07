@@ -45,35 +45,50 @@ function loadNotes(){
 </script>
 
 <template>
-<div class="notes-container">
+  <div class="notes-container">
     <section>
-        <h3>New note</h3>
-        <input type="text" v-model="_note.title" placeholder="Title">
-        <textarea v-model="_note.text" placeholder="Note text..."></textarea>
-        <button @click="saveNote()">
-            Save
-        </button>
+      <h3>New note</h3>
+      <input
+        v-model="_note.title"
+        type="text"
+        placeholder="Title"
+      >
+      <textarea
+        v-model="_note.text"
+        placeholder="Note text..."
+      />
+      <button @click="saveNote()">
+        Save
+      </button>
     </section>
     <section>
-        <h3>Notes</h3>
-        <div class="flex-container flex-justify" v-for="n in _notes" :key="n.id">
-            <a @click="openNote(n)" class="flex-grow" :class="{'selected':n.id==_selected.id}">
-                {{ n.title }}
-            </a>
-            <a @click="deleteNote(n.id)">[X]</a>
-        </div>
+      <h3>Notes</h3>
+      <div
+        v-for="n in _notes"
+        :key="n.id"
+        class="flex-container flex-justify"
+      >
+        <a
+          class="flex-grow"
+          :class="{'selected':n.id==_selected.id}"
+          @click="openNote(n)"
+        >
+          {{ n.title }}
+        </a>
+        <a @click="deleteNote(n.id)">[X]</a>
+      </div>
     </section>
 
     <section>
-        <h3>Selected note</h3>
-        <div class="padded">
+      <h3>Selected note</h3>
+      <div class="padded">
         <strong>{{ _selected.title }}</strong>
         <p>
-            {{ _selected.text }}
+          {{ _selected.text }}
         </p>
-        </div>
+      </div>
     </section>
-</div>    
+  </div>    
 </template>
 
 <style scoped>

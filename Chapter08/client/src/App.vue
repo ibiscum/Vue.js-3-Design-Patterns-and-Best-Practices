@@ -19,29 +19,27 @@ function testWebWorker(){
 </script>
 
 <template>
-<div class="padded">
+  <div class="padded">
     <h1>Chapter 8 - Multithreading with Web Workers</h1>
     <hr>
 
     <h2>Simple Web Worker test</h2>
     <p>Send the request to the Web Worker, and it will answer in 3 seconds.</p>
     <div class="flex-container padded">
-        <button @click="testWebWorker()">
-            Send request
-        </button>
-        <div class="padded">
-            {{ _message }}
-        </div>
+      <button @click="testWebWorker()">
+        Send request
+      </button>
+      <div class="padded">
+        {{ _message }}
+      </div>
     </div>
 
     <h2>IndexedDB access through the worker</h2>
-    <DBtestVue></DBtestVue>
+    <DBtestVue />
     
     <h2>Network connections through the worker</h2>
-    <NetworkCommunicationVue></NetworkCommunicationVue>
-
-</div>
-
+    <NetworkCommunicationVue />
+  </div>
 </template>
 
 <style scoped>
