@@ -1,5 +1,5 @@
 <script setup>
-import Toggle from "./components/Toggle.vue"
+import Toggle from "./components/ToggleComp.vue"
 import Spinner from "./components/Spinner.vue"
 import InfiniteScroller from "./components/InfiniteScroller.vue";
 import {ref} from "vue"

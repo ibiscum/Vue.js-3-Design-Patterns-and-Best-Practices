@@ -1,5 +1,5 @@
-const express = require("express")
-const cors=require("cors")
+import express, { json } from "express"
+import cors from "cors"
 const app=express()
 const PORT=3000
 
@@ -7,7 +7,7 @@ const PORT=3000
 app.use(cors())
 
 // Parse the request's body as json
-app.use(express.json())
+app.use(json())
 
 /**
     Mirror REST operations. The server returns the same data sent.

@@ -2,6 +2,8 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Simple NodeJS RESTful server",
+  "type": "module",
+  "private":true,
   "main": "index.js",
   "scripts": {
     "start": "node ."
@@ -10,8 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "eslint": "^9.35.0",
-    "eslint-plugin-vue": "^10.4.0",
+    "eslint": "^9.38.0",
+    "eslint-plugin-vue": "^10.5.1",
     "express": "^5.1.0"
   }
 }

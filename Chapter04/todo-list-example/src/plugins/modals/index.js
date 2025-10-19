@@ -29,7 +29,7 @@
 
  */
 import { reactive } from "vue"
-import Modal from "./Modal.vue"
+import Modal from "./ModalComp.vue"
 
 const
     _current = reactive({
@@ -61,7 +61,7 @@ const
         install(App, options) {
 
             // Register global component
-            App.component("Modal", Modal);
+            App.component("ModalComp", Modal);
 
             // Provide API
             App.provide("$modals", api)
