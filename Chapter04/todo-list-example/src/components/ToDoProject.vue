@@ -5,6 +5,7 @@ import TodoList from "./ToDoList.vue";
 import TodoFilter from "./ToDoFilter.vue";
 import TodoSummary from "./ToDoSummary.vue"
 import todoService from "../services/todo";
+import ModalComp from "../plugins/modals/ModalComp.vue";
 
 const
     $modals = inject("$modals"),
@@ -93,11 +94,11 @@ function toggleStatus(item){
         </TodoList>
 
         <!-- Modals -->
-        <Modal name="newEditItem" title="To Do Item">
+        <ModalComp name="newEditItem" title="To Do Item">
             <TodoItemForm v-model="_item"></TodoItemForm>
-        </Modal>
+        </ModalComp>
 
-        <Modal name="deleteItem" title="Delete To-Do Item">
+        <ModalComp name="deleteItem" title="Delete To-Do Item">
             <p>
                 This action will delete the item:<br>
                 <strong>{{_item.text}}</strong>
@@ -105,7 +106,7 @@ function toggleStatus(item){
             <p class="w3-text-red w3-pale-red">
                 This action cannot be undone.
             </p>
-        </Modal>
+        </ModalComp>
     </div>
 </template>
 
