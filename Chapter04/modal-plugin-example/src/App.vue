@@ -22,12 +22,12 @@ function showModal() {
       Show modal
     </button>
     <div>{{ _result }}</div>
-    <Modal
+    <ModalComp
       name="myModal"
       title="Modal example"
     >
       Some important content here
-    </Modal>
+    </ModalComp>
   </div>
 </template>
 
