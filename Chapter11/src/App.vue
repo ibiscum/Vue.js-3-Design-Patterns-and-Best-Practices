@@ -1,6 +1,6 @@
 <script setup>
 import Toggle from "./components/ToggleComp.vue"
-import Spinner from "./components/Spinner.vue"
+import Spinner from "./components/SpinnerComp.vue"
 import InfiniteScroller from "./components/InfiniteScroller.vue";
 import {ref} from "vue"
 
