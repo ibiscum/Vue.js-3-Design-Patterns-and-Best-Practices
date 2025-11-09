@@ -1,23 +1,22 @@
 <script setup>
-import { computed } from "vue"
-const
-    $props = defineProps({
-        "modelValue": { type: Array, default: () => [] },
-        "filter": { type: String, default: "" }
-    }),
-    $emit = defineEmits(["edit", "delete","toggle"]),
-    _filtered_list = computed(() => {
-        if ($props.filter) {
-            return $props.modelValue.filter(item => {
-                return item.text.toUpperCase().includes($props.filter.toUpperCase())
-            })
-        } else {
-            return $props.modelValue;
-        }
-    })
+import { computed } from "vue";
+const $props = defineProps({
+    modelValue: { type: Array, default: () => [] },
+    filter: { type: String, default: "" },
+  }),
+  $emit = defineEmits(["edit", "delete", "toggle"]),
+  _filtered_list = computed(() => {
+    if ($props.filter) {
+      return $props.modelValue.filter((item) => {
+        return item.text.toUpperCase().includes($props.filter.toUpperCase());
+      });
+    } else {
+      return $props.modelValue;
+    }
+  });
 
 function emitEvent(event_name, payload) {
-    $emit(event_name, payload)
+  $emit(event_name, payload);
 }
 </script>
 
@@ -34,24 +33,21 @@ function emitEvent(event_name, payload) {
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="item in _filtered_list"
-          :key="item.id"
-        >
+        <tr v-for="item in _filtered_list" :key="item.id">
           <td
-            class="clickable w3-hover-pale-blue "
+            class="clickable w3-hover-pale-blue"
             @click="emitEvent('toggle', item)"
           >
             <i
-              v-if="item.status=='not_started'"
+              v-if="item.status == 'not_started'"
               class="fa-solid fa-2x fa-square w3-text-light-gray"
             />
             <i
-              v-if="item.status=='in_progress'"
+              v-if="item.status == 'in_progress'"
               class="fa-solid fa-2x fa-square-minus w3-text-teal"
             />
             <i
-              v-if="item.status=='completed'"
+              v-if="item.status == 'completed'"
               class="fa-solid fa-2x fa-square-check w3-text-green"
             />
           </td>
@@ -59,22 +55,22 @@ function emitEvent(event_name, payload) {
           <td class="w3-right-align">
             <span
               class="clickable w3-transparent w3-text-indigo w3-hover-text-blue w3-hover-white w3-margin-right"
-              @click="emitEvent('edit',item)"
+              @click="emitEvent('edit', item)"
             >
               <i class="fa-solid fa-pen-to-square" />
               Edit
             </span>
-                        
+
             <span
               class="clickable w3-transparent w3-text-purple w3-hover-text-red w3-hover-white"
-              @click="emitEvent('delete',item)"
+              @click="emitEvent('delete', item)"
             >
               <i class="fa-solid fa-trash-can" />
               Delete
             </span>
           </td>
         </tr>
-        <tr v-if="_filtered_list.length==0">
+        <tr v-if="_filtered_list.length == 0">
           <td><i class="fa-solid fa-square w3-text-light-gray" /></td>
           <td>The list is empty.</td>
           <td />
@@ -85,7 +81,7 @@ function emitEvent(event_name, payload) {
 </template>
 
 <style scoped>
-td:first-child{
-    width: 5rem;
+td:first-child {
+  width: 5rem;
 }
 </style>

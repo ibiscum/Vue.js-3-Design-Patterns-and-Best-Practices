@@ -1,12 +1,10 @@
 <script setup>
-import Toggle from "./components/ToggleComp.vue"
-import Spinner from "./components/SpinnerComp.vue"
+import Toggle from "./components/ToggleComp.vue";
+import Spinner from "./components/SpinnerComp.vue";
 import InfiniteScroller from "./components/InfiniteScroller.vue";
-import {ref} from "vue"
+import { ref } from "vue";
 
-const
-    _feature_enabled=ref(true)
-
+const _feature_enabled = ref(true);
 </script>
 
 <template>
@@ -34,10 +32,10 @@ const
 </template>
 
 <style scoped>
-.limit-viewport{
-    padding: 1rem;
-    overflow: hidden auto;
-    max-height: 5rem;
-    border: 1px solid #ccc;
+.limit-viewport {
+  padding: 1rem;
+  overflow: hidden auto;
+  max-height: 5rem;
+  border: 1px solid #ccc;
 }
 </style>

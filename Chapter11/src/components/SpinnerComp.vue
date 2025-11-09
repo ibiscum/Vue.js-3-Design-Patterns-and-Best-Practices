@@ -5,31 +5,34 @@
   Usage:
         <Spinner caption="some text"></Spinner>
  */
-const $props=defineProps({caption: {type: String, default: 'caption'}})
+const $props = defineProps({ caption: { type: String, default: "caption" } });
 </script>
 
 <template>
   <div>
     <span class="spinner" />
     {{ $props.caption }}
-  </div>    
+  </div>
 </template>
 
 <style scoped>
-.spinner{
-    display: inline-block;
-    height: 1rem;
-    width: 1rem;
-    border: 2px solid;
-    vertical-align: middle;
-    border-radius: 50%;
-    border-top-color: #06c9c9;
-    animation: rotate 1s linear infinite;
+.spinner {
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  border: 2px solid;
+  vertical-align: middle;
+  border-radius: 50%;
+  border-top-color: #06c9c9;
+  animation: rotate 1s linear infinite;
 }
 
 @keyframes rotate {
-    0%{ transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}    
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-    
 </style>

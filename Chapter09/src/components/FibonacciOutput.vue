@@ -4,26 +4,22 @@
    Fibonacci result and displays it.
 
  */
-import { computed } from "vue"
-import fibService from "../services/Fibonacci"
+import { computed } from "vue";
+import fibService from "../services/Fibonacci";
 
-const
-    $props=defineProps({
-        number:{type: Number, default: 0}
-    })
+const $props = defineProps({
+  number: { type: Number, default: 0 },
+});
 
-const 
-    _result=computed(()=>{
-        return fibService.Fibonacci($props.number)
-    })
+const _result = computed(() => {
+  return fibService.Fibonacci($props.number);
+});
 </script>
 
 <template>
-<h3>
-    Result: <span>{{ _result }}</span> 
-</h3>
+  <h3>
+    Result: <span>{{ _result }}</span>
+  </h3>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

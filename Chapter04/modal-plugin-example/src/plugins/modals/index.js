@@ -28,44 +28,42 @@
         </Modal>
 
  */
-import { reactive } from "vue"
+import { reactive } from "vue";
 import ModalComp from "./ModalComp.vue";
 
-const
-    _current = reactive({
-        name: "",
-        resolve: null,
-        reject: null
-    }),
-    api = {
-        active() {
-            return _current.name;
-        },
-        show(name) {
-            _current.name = name;
-            return new Promise((resolve = () => { }, reject = () => { }) => {
-                _current.resolve = resolve;
-                _current.reject = reject;
-            })
-        },
-        accept() {
-            _current.resolve();
-            _current.name = ""
-        },
-        cancel() {
-            _current.reject();
-            _current.name = "";
-        }
+const _current = reactive({
+    name: "",
+    resolve: null,
+    reject: null,
+  }),
+  api = {
+    active() {
+      return _current.name;
     },
-    plugin = {
-        install(App, options) {
+    show(name) {
+      _current.name = name;
+      return new Promise((resolve = () => {}, reject = () => {}) => {
+        _current.resolve = resolve;
+        _current.reject = reject;
+      });
+    },
+    accept() {
+      _current.resolve();
+      _current.name = "";
+    },
+    cancel() {
+      _current.reject();
+      _current.name = "";
+    },
+  },
+  plugin = {
+    install(App, options) {
+      // Register global component
+      App.component("ModalComp", ModalComp);
 
-            // Register global component
-            App.component("ModalComp", ModalComp);
-
-            // Provide API
-            App.provide("$modals", api)
-        }
-    }
+      // Provide API
+      App.provide("$modals", api);
+    },
+  };
 
 export default plugin;

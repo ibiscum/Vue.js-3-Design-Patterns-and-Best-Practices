@@ -1,20 +1,22 @@
 <script setup>
-import webWorker from "../services/WebWorker"
-import { ref } from "vue"
+import webWorker from "../services/WebWorker";
+import { ref } from "vue";
 
-const
-    _data_to_send = ref(""),
-    _data_received = ref(""),
-    _method = ref("GET")
+const _data_to_send = ref(""),
+  _data_received = ref(""),
+  _method = ref("GET");
 
-function sendData(){
-    webWorker
-        .request(_method.value, {url:"/api/test", data: _data_to_send.value})
-        .then(reply=>{
-            _data_received.value=reply
-        },()=>{
-            _data_received.value="Error in communication"
-        })
+function sendData() {
+  webWorker
+    .request(_method.value, { url: "/api/test", data: _data_to_send.value })
+    .then(
+      (reply) => {
+        _data_received.value = reply;
+      },
+      () => {
+        _data_received.value = "Error in communication";
+      },
+    );
 }
 </script>
 
@@ -24,21 +26,11 @@ function sendData(){
       <h4>Text to send</h4>
       <div class="padded flex-container gap">
         <label>
-          <input
-            v-model="_method"
-            type="radio"
-            value="GET"
-            name="method"
-          >
+          <input v-model="_method" type="radio" value="GET" name="method" />
           <span>GET Method</span>
         </label>
         <label>
-          <input
-            v-model="_method"
-            type="radio"
-            value="POST"
-            name="method"
-          >
+          <input v-model="_method" type="radio" value="POST" name="method" />
           <span>POST Method</span>
         </label>
       </div>
@@ -47,10 +39,8 @@ function sendData(){
           v-model="_data_to_send"
           type="text"
           placeholder="Type text to mirror..."
-        >
-        <button @click="sendData()">
-          Send
-        </button>
+        />
+        <button @click="sendData()">Send</button>
       </div>
     </section>
 
@@ -65,14 +55,14 @@ function sendData(){
 
 <style scoped>
 .network-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-.data-mirror{
-    padding: var(--padding);
-    border: 1px solid var(--gray);
-    min-height: 6rem;
+.data-mirror {
+  padding: var(--padding);
+  border: 1px solid var(--gray);
+  min-height: 6rem;
 }
 </style>

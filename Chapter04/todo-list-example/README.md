@@ -2,7 +2,7 @@
 
 ## Created by Pablo D. Garaguso (2022)
 
-This application builds on the concepts seen from chapters 1 to 4. 
+This application builds on the concepts seen from chapters 1 to 4.
 
 To install dependencies run:
 

@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <header class="w3-blue w3-padding">
@@ -9,6 +7,4 @@
   </header>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

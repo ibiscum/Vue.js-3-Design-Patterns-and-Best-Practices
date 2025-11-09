@@ -1,20 +1,22 @@
 <script setup>
-import { ref } from "vue"
-import todoService from "../services/todo"
-const
-    $props = defineProps({
-        modelValue: { type: Object, default: () => { return {} } }
-    }),
-    $emit = defineEmits(["update:modelValue"]),
-    _item = ref({})
+import { ref } from "vue";
+import todoService from "../services/todo";
+const $props = defineProps({
+    modelValue: {
+      type: Object,
+      default: () => {
+        return {};
+      },
+    },
+  }),
+  $emit = defineEmits(["update:modelValue"]),
+  _item = ref({});
 
-_item.value = { ...$props.modelValue }
+_item.value = { ...$props.modelValue };
 
 function emitUpdate() {
-    $emit("update:modelValue", _item.value)
+  $emit("update:modelValue", _item.value);
 }
-
-
 </script>
 
 <template>
@@ -26,7 +28,7 @@ function emitUpdate() {
         type="text"
         class="w3-input w3-border"
         @blur="emitUpdate()"
-      >
+      />
     </div>
 
     <div class="w3-cell w3-padding">
@@ -48,6 +50,4 @@ function emitUpdate() {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

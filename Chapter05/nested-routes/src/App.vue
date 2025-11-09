@@ -1,17 +1,16 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router"
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-<div>
-  <RouterView />
-</div>
+  <div>
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
-div{
-    height: 100vh;
-    font-family: sans-serif;
+div {
+  height: 100vh;
+  font-family: sans-serif;
 }
-
 </style>

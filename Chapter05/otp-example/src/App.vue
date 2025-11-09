@@ -1,10 +1,16 @@
 <script setup>
-import SignInOTP from './components/SignInOTP.vue'
+import SignInOTP from "./components/SignInOTP.vue";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="./assets/logo.svg"
+      width="125"
+      height="125"
+    />
   </header>
 
   <main>

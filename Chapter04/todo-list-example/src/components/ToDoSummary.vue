@@ -1,21 +1,20 @@
 <script setup>
-import { ref, computed } from "vue"
-import todoService from "../services/todo"
+import { ref, computed } from "vue";
+import todoService from "../services/todo";
 
-const
-    $props = defineProps({
-        items: { type: Array, default: () => [] }
-    }),
-    _status=computed(()=>{
-        let status={}
-        todoService.getStatusList().forEach(stat=>{
-            status[stat.id]=0;
-        })
-        $props.items.forEach(todo=>{
-            status[todo.status]+=1
-        })
-        return status
-    })
+const $props = defineProps({
+    items: { type: Array, default: () => [] },
+  }),
+  _status = computed(() => {
+    let status = {};
+    todoService.getStatusList().forEach((stat) => {
+      status[stat.id] = 0;
+    });
+    $props.items.forEach((todo) => {
+      status[todo.status] += 1;
+    });
+    return status;
+  });
 </script>
 
 <template>
@@ -37,17 +36,17 @@ const
 
 <style scoped>
 .summary-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .summary-wrapper div {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 h2 {
-    font-size: 3rem;
-    margin: 0;
+  font-size: 3rem;
+  margin: 0;
 }
 </style>

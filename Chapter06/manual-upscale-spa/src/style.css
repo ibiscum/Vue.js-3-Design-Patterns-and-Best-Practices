@@ -52,7 +52,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  color:white;
+  color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -67,7 +67,6 @@ button:focus-visible {
 .card {
   padding: 2em;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {

@@ -20,6 +20,6 @@ The application can be built for production with the following command:
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
-***
+---
 
 By **Pablo David Garaguso**

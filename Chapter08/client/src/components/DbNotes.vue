@@ -1,46 +1,51 @@
 <script setup>
-import webWorker from "../services/WebWorker"
-import { ref } from "vue"
+import webWorker from "../services/WebWorker";
+import { ref } from "vue";
 
-const
-    _notes=ref([]),
-    _note=ref({}),
-    _selected=ref({})
+const _notes = ref([]),
+  _note = ref({}),
+  _selected = ref({});
 
-loadNotes()
+loadNotes();
 
-
-function saveNote(){
-    if(_note.value.title && _note.value.text){
-        webWorker
-            .request("addNote", JSON.stringify(_note.value))
-            .then(id=>{
-                console.log(id)
-                loadNotes()
-            },err=>{
-                console.log(err)
-            })
-            .finally(()=>{
-                _note.value={}
-            })
-    }
+function saveNote() {
+  if (_note.value.title && _note.value.text) {
+    webWorker
+      .request("addNote", JSON.stringify(_note.value))
+      .then(
+        (id) => {
+          console.log(id);
+          loadNotes();
+        },
+        (err) => {
+          console.log(err);
+        },
+      )
+      .finally(() => {
+        _note.value = {};
+      });
+  }
 }
 
-function deleteNote(id){
-    webWorker.request("deleteNote", {id}).finally(()=>{loadNotes()})
+function deleteNote(id) {
+  webWorker.request("deleteNote", { id }).finally(() => {
+    loadNotes();
+  });
 }
 
-function openNote(note){
-    _selected.value=note;
+function openNote(note) {
+  _selected.value = note;
 }
 
-function loadNotes(){
-    webWorker.request("getNotes",[])
-        .then(data=>{
-            _notes.value=data;
-        },()=>{
-            _notes.value=[]
-        })
+function loadNotes() {
+  webWorker.request("getNotes", []).then(
+    (data) => {
+      _notes.value = data;
+    },
+    () => {
+      _notes.value = [];
+    },
+  );
 }
 </script>
 
@@ -48,29 +53,16 @@ function loadNotes(){
   <div class="notes-container">
     <section>
       <h3>New note</h3>
-      <input
-        v-model="_note.title"
-        type="text"
-        placeholder="Title"
-      >
-      <textarea
-        v-model="_note.text"
-        placeholder="Note text..."
-      />
-      <button @click="saveNote()">
-        Save
-      </button>
+      <input v-model="_note.title" type="text" placeholder="Title" />
+      <textarea v-model="_note.text" placeholder="Note text..." />
+      <button @click="saveNote()">Save</button>
     </section>
     <section>
       <h3>Notes</h3>
-      <div
-        v-for="n in _notes"
-        :key="n.id"
-        class="flex-container flex-justify"
-      >
+      <div v-for="n in _notes" :key="n.id" class="flex-container flex-justify">
         <a
           class="flex-grow"
-          :class="{'selected':n.id==_selected.id}"
+          :class="{ selected: n.id == _selected.id }"
           @click="openNote(n)"
         >
           {{ n.title }}
@@ -88,38 +80,37 @@ function loadNotes(){
         </p>
       </div>
     </section>
-  </div>    
+  </div>
 </template>
 
 <style scoped>
-.notes-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--padding);
-    border: 2px solid var(--gray);
-} 
-
-h3{
-    background-color: var(--gray);
-    padding: 4px;
-    margin: 0;
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--padding);
+  border: 2px solid var(--gray);
 }
 
-section{
-    padding: 4px;
+h3 {
+  background-color: var(--gray);
+  padding: 4px;
+  margin: 0;
 }
 
-a{
-    cursor: pointer;
+section {
+  padding: 4px;
 }
 
-a:hover{
-    font-weight: 900;
+a {
+  cursor: pointer;
 }
 
-.selected{
-    font-weight: 900;
-    text-decoration: underline;
+a:hover {
+  font-weight: 900;
 }
 
+.selected {
+  font-weight: 900;
+  text-decoration: underline;
+}
 </style>

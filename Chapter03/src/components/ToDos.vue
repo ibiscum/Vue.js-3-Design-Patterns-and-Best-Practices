@@ -1,27 +1,29 @@
 <script setup>
-import { ref, computed } from "vue"
+import { ref, computed } from "vue";
 
-const
-    _todo_text = ref(""),
-    _todo_list = ref([]),
-    _pending = computed(() => {
-        return _todo_list.value.filter(item => !item.checked)
-    }),
-    _done = computed(() => {
-        return _todo_list.value.filter(item => item.checked)
-    })
+const _todo_text = ref(""),
+  _todo_list = ref([]),
+  _pending = computed(() => {
+    return _todo_list.value.filter((item) => !item.checked);
+  }),
+  _done = computed(() => {
+    return _todo_list.value.filter((item) => item.checked);
+  });
 
 function clearToDo() {
-    _todo_text.value = ""
+  _todo_text.value = "";
 }
 
 function addToDo() {
-    if (_todo_text.value != "") {
-        _todo_list.value.push({ id: _todo_list.value.length + 1, text: _todo_text.value, checked: false })
-        clearToDo()
-    }
+  if (_todo_text.value != "") {
+    _todo_list.value.push({
+      id: _todo_list.value.length + 1,
+      text: _todo_text.value,
+      checked: false,
+    });
+    clearToDo();
+  }
 }
-
 </script>
 
 <template>
@@ -37,89 +39,55 @@ function addToDo() {
     <!-- User input -->
     <div class="w3-container flex-container w3-light-gray w3-padding">
       <input
-        v-model="_todo_text" 
-        class="w3-input w3-border-0" 
+        v-model="_todo_text"
+        class="w3-input w3-border-0"
         type="text"
-        autofocus 
+        autofocus
         placeholder="Type here your to-do item..."
         @keyup.enter="addToDo()"
-      >
-      <button
-        class="w3-button w3-gray"
-        @click="clearToDo()"
-      >
+      />
+      <button class="w3-button w3-gray" @click="clearToDo()">
         <i class="fa-solid fa-times" />
       </button>
-      <button
-        class="w3-button w3-blue"
-        @click="addToDo()"
-      >
+      <button class="w3-button w3-blue" @click="addToDo()">
         <i class="fa-solid fa-plus" />
       </button>
     </div>
 
     <!-- List of pending items -->
-    <div class="w3-padding w3-blue">
-      Pending ({{ _pending.length }})
-    </div>
-    <div
-      v-for="todo in _pending"
-      :key="todo.id"
-      class="w3-padding"
-    >
+    <div class="w3-padding w3-blue">Pending ({{ _pending.length }})</div>
+    <div v-for="todo in _pending" :key="todo.id" class="w3-padding">
       <label>
-        <input
-          v-model="todo.checked"
-          type="checkbox"
-        >
+        <input v-model="todo.checked" type="checkbox" />
         <span class="w3-margin-left">
           {{ todo.text }}
         </span>
       </label>
     </div>
-    <div
-      v-show="_pending.length == 0"
-      class="w3-padding"
-    >
-      No tasks
-    </div>
+    <div v-show="_pending.length == 0" class="w3-padding">No tasks</div>
 
     <!-- List of completed tasks -->
-    <div class="w3-padding w3-blue">
-      Completed ({{ _done.length }})
-    </div>
-    <div
-      v-for="todo in _done"
-      :key="todo.id"
-      class="w3-padding"
-    >
+    <div class="w3-padding w3-blue">Completed ({{ _done.length }})</div>
+    <div v-for="todo in _done" :key="todo.id" class="w3-padding">
       <label>
-        <input
-          v-model="todo.checked"
-          type="checkbox"
-        >
+        <input v-model="todo.checked" type="checkbox" />
         <span class="w3-margin-left">
           {{ todo.text }}
         </span>
       </label>
     </div>
-    <div
-      v-show="_done.length == 0"
-      class="w3-padding"
-    >
-      No tasks
-    </div>
+    <div v-show="_done.length == 0" class="w3-padding">No tasks</div>
   </div>
 </template>
 
 <style scoped>
 .todo-container {
-    max-width: 100%;
-    min-width: 30rem;
+  max-width: 100%;
+  min-width: 30rem;
 }
 
 label {
-    cursor: pointer;
-    display: flex;
+  cursor: pointer;
+  display: flex;
 }
 </style>

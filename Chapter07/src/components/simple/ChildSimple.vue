@@ -1,24 +1,20 @@
 <script setup>
-import useState from "../../services/SimpleState"
+import useState from "../../services/SimpleState";
 
-const $state=useState()
-
-
+const $state = useState();
 </script>
 
 <template>
-<div class="padding with-background">
+  <div class="padding with-background">
     <div class="flex-container">
-        <strong>State: </strong><br>
-        <pre>{{$state}}</pre>
+      <strong>State: </strong><br />
+      <pre>{{ $state }}</pre>
     </div>
     <div class="flex-container flex-wrap">
-    <button @click="$state.counter++">Increment</button>
-    <button @click="$state.counter--">Decrement</button>
+      <button @click="$state.counter++">Increment</button>
+      <button @click="$state.counter--">Decrement</button>
     </div>
-</div>
+  </div>
 </template>
 
-<style scoped>
-    
-</style> 
+<style scoped></style>

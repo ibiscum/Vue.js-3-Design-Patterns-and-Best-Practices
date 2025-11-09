@@ -1,5 +1,5 @@
-import mitt from "mitt"
+import mitt from "mitt";
 
-const eventBus = new mitt()
+const eventBus = new mitt();
 
-export default eventBus
+export default eventBus;

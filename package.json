@@ -1,0 +1,18 @@
+{
+  "name": "vue.js-3-design-patterns",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --fix",
+    "format": "prettier . --write"
+  },
+  "workspaces": [
+    "Chapter03"
+  ],
+  "dependencies": {
+    "eslint": "^9.38.0",
+    "eslint-plugin-vue": "^10.5.1",
+    "prettier": "^3.6.2"
+  }
+}

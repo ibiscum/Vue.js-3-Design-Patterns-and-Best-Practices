@@ -1,5 +1,5 @@
-import mitt from "mitt"
+import mitt from "mitt";
 
-const MessageBus = new mitt()
+const MessageBus = new mitt();
 
-export default MessageBus
+export default MessageBus;
