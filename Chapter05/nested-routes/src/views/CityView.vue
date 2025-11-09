@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import locationService from "../services/locationService";
 
-const $props = defineProps(["country", "state"]),
+const $props = defineProps({country:{type: String, default: ""}, state:{type: String, default: ""}}),
   _cities = ref(
     locationService.getCitiesByCountryAndState($props.country, $props.state),
   ),
@@ -27,7 +27,7 @@ function select(city) {
   <div class="wrapper">
     <section>
       <h3>Cities ({{ _cities.length }})</h3>
-      <hr />
+      <hr>
       <a
         v-for="c in _cities"
         :key="c.city + c.state"
@@ -39,7 +39,7 @@ function select(city) {
     </section>
     <section>
       <h3>City selected</h3>
-      <hr />
+      <hr>
       <div v-show="_city.city != undefined">
         {{ _city.city }}, {{ _city.state }}, {{ $props.country }}
       </div>

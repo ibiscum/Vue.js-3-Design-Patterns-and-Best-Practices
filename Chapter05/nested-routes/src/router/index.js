@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import HomeView from "../views/Home.vue";
+import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -12,19 +12,19 @@ const router = createRouter({
     {
       path: "/directory",
       name: "directory",
-      component: () => import("../views/Directory.vue"),
+      component: () => import("../views/DirectoryView.vue"),
       children: [
         {
           path: ":country",
           name: "states",
           props: true,
-          component: () => import("../views/State.vue"),
+          component: () => import("../views/StateView.vue"),
           children: [
             {
               path: ":state",
               name: "cities",
               props: true,
-              component: () => import("../views/City.vue"),
+              component: () => import("../views/CityView.vue"),
             },
           ],
         },

@@ -8,8 +8,12 @@ const countries = locationService.getCountries();
   <div class="wrapper">
     <section>
       <h4>Country directory</h4>
-      <hr />
-      <div class="country" v-for="c in countries" :key="c.code">
+      <hr>
+      <div
+        v-for="c in countries"
+        :key="c.code"
+        class="country"
+      >
         <RouterLink
           :to="{ name: 'states', params: { country: c.code } }"
           active-class="selected"
@@ -18,7 +22,7 @@ const countries = locationService.getCountries();
         </RouterLink>
       </div>
     </section>
-    <RouterView></RouterView>
+    <RouterView />
   </div>
 </template>
 

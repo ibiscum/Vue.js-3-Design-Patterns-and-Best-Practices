@@ -10,7 +10,8 @@
   "workspaces": [
     "Chapter03",
     "Chapter04/modal-plugin-example",
-    "Chapter04/todo-list-example"
+    "Chapter04/todo-list-example",
+    "Chapter05/nested-routes"
   ],
   "dependencies": {
     "eslint": "^9.38.0",

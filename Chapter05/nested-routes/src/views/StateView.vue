@@ -2,7 +2,7 @@
 import { ref, watch } from "vue";
 import locationService from "../services/locationService";
 
-const $props = defineProps(["country"]),
+const $props = defineProps({country: {type: String, default: ""}}),
   _states = ref(locationService.getStatesByCountry($props.country));
 
 watch(
@@ -17,8 +17,11 @@ watch(
   <div class="wrapper">
     <section>
       <h3>State / Province ({{ _states.length }})</h3>
-      <hr />
-      <div v-for="s in _states" :key="s">
+      <hr>
+      <div
+        v-for="s in _states"
+        :key="s"
+      >
         <RouterLink
           :to="{ name: 'cities', params: { state: s } }"
           active-class="selected"
@@ -27,7 +30,7 @@ watch(
         </RouterLink>
       </div>
     </section>
-    <RouterView></RouterView>
+    <RouterView />
   </div>
 </template>
 
