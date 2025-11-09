@@ -8,7 +8,9 @@
     "format": "prettier . --write"
   },
   "workspaces": [
-    "Chapter03"
+    "Chapter03",
+    "Chapter04/modal-plugin-example",
+    "Chapter04/todo-list-example"
   ],
   "dependencies": {
     "eslint": "^9.38.0",

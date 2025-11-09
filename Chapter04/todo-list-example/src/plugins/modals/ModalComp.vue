@@ -19,7 +19,10 @@ function closeModal(accept = false) {
 </script>
 
 <template>
-  <div v-if="_show" class="viewport-wrapper">
+  <div
+    v-if="_show"
+    class="viewport-wrapper"
+  >
     <div class="dialog-wrapper w3-animate-top">
       <header class="w3-blue w3-padding">
         {{ $props.title }}
@@ -28,8 +31,18 @@ function closeModal(accept = false) {
         <slot />
       </main>
       <footer class="w3-right-align w3-blue w3-padding">
-        <button class="w3-button" @click="closeModal(true)">Accept</button>
-        <button class="w3-button" @click="closeModal(false)">Cancel</button>
+        <button
+          class="w3-button"
+          @click="closeModal(true)"
+        >
+          Accept
+        </button>
+        <button
+          class="w3-button"
+          @click="closeModal(false)"
+        >
+          Cancel
+        </button>
       </footer>
     </div>
   </div>

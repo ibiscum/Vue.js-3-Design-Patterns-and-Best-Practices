@@ -75,11 +75,17 @@ function toggleStatus(item) {
 <template>
   <div class="project-container">
     <!-- Summary -->
-    <TodoSummary :items="_items" class="w3-margin-bottom"></TodoSummary>
+    <TodoSummary
+      :items="_items"
+      class="w3-margin-bottom"
+    />
 
     <!-- Filter bar -->
     <div class="w3-margin-bottom">
-      <TodoFilter v-model="_filter" class="flex-grow"></TodoFilter>
+      <TodoFilter
+        v-model="_filter"
+        class="flex-grow"
+      />
     </div>
 
     <!-- Todo list -->
@@ -91,25 +97,33 @@ function toggleStatus(item) {
       @delete="deleteItem"
     >
       <button
-        @click="showModal(true)"
         class="w3-button w3-blue w3-round-xxlarge"
+        @click="showModal(true)"
       >
-        <i class="fa-solid fa-square-plus"></i>
+        <i class="fa-solid fa-square-plus" />
         New item
       </button>
     </TodoList>
 
     <!-- Modals -->
-    <ModalComp name="newEditItem" title="To Do Item">
-      <TodoItemForm v-model="_item"></TodoItemForm>
+    <ModalComp
+      name="newEditItem"
+      title="To Do Item"
+    >
+      <TodoItemForm v-model="_item" />
     </ModalComp>
 
-    <ModalComp name="deleteItem" title="Delete To-Do Item">
+    <ModalComp
+      name="deleteItem"
+      title="Delete To-Do Item"
+    >
       <p>
-        This action will delete the item:<br />
+        This action will delete the item:<br>
         <strong>{{ _item.text }}</strong>
       </p>
-      <p class="w3-text-red w3-pale-red">This action cannot be undone.</p>
+      <p class="w3-text-red w3-pale-red">
+        This action cannot be undone.
+      </p>
     </ModalComp>
   </div>
 </template>

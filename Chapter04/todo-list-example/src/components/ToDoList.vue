@@ -33,7 +33,10 @@ function emitEvent(event_name, payload) {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in _filtered_list" :key="item.id">
+        <tr
+          v-for="item in _filtered_list"
+          :key="item.id"
+        >
           <td
             class="clickable w3-hover-pale-blue"
             @click="emitEvent('toggle', item)"

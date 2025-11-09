@@ -24,17 +24,17 @@ function emitUpdate() {
     <div class="w3-cell w3-padding">
       <strong>Description</strong>
       <input
-        v-model.string="_item.text"
+        v-model="_item.text"
         type="text"
         class="w3-input w3-border"
         @blur="emitUpdate()"
-      />
+      >
     </div>
 
     <div class="w3-cell w3-padding">
       <strong>Status</strong>
       <select
-        v-model.string="_item.status"
+        v-model="_item.status"
         class="w3-select w3-border"
         @change="emitUpdate()"
       >

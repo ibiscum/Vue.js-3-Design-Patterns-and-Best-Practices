@@ -1,6 +1,11 @@
 <script setup>
 import { ref, onMounted } from "vue";
-const $props = defineProps(["modelValue"]),
+const $props = defineProps({
+  modelValue: {
+      type: String,
+      default: ""
+    },
+  }),
   $emit = defineEmits(["update:modelValue"]),
   _value = ref("");
 
@@ -26,8 +31,11 @@ function publishValue() {
       class="w3-input w3-border-0"
       placeholder="Enter filter text here..."
       @keyup="publishValue()"
-    />
-    <button class="w3-border-0" @click="clear()">
+    >
+    <button
+      class="w3-border-0"
+      @click="clear()"
+    >
       <i class="fas fa-fw fa-times" />
     </button>
   </div>
