@@ -11,7 +11,8 @@
     "Chapter03",
     "Chapter04/modal-plugin-example",
     "Chapter04/todo-list-example",
-    "Chapter05/nested-routes"
+    "Chapter05/nested-routes",
+    "Chapter05/otp-example"
   ],
   "dependencies": {
     "eslint": "^9.38.0",

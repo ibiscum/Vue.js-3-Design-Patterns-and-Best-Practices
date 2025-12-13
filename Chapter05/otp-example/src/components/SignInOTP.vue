@@ -56,15 +56,25 @@ function checkOTP() {
   <section>
     <!-- Email input -->
     <div v-show="!_show_input_code">
-      <input type="email" v-model="_user_email" />
-      <button @click="signInUser()">Submit</button>
+      <input
+        v-model="_user_email"
+        type="email"
+      >
+      <button @click="signInUser()">
+        Submit
+      </button>
     </div>
 
     <!-- Show code form -->
     <div v-show="_show_input_code">
-      <input type="text" v-model="_otp_code" />
-      <button @click="checkOTP()">Submit</button>
-      <hr />
+      <input
+        v-model="_otp_code"
+        type="text"
+      >
+      <button @click="checkOTP()">
+        Submit
+      </button>
+      <hr>
       <p>You have {{ _wait_seconds }} seconds before the code expires.</p>
     </div>
   </section>
