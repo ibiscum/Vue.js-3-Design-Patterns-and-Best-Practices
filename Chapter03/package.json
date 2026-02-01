@@ -12,11 +12,11 @@
   "dependencies": {
     "eslint": "^9.39.2",
     "eslint-plugin-vue": "^10.6.2",
-    "vue": "^3.5.25"
+    "vue": "^3.5.26"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.3",
-    "stylelint": "^16.25.0",
+    "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1",
     "vite": "^7.3.0"
   }
