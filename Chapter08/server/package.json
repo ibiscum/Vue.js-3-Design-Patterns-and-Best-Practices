@@ -12,8 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "eslint": "^9.39.0",
-    "eslint-plugin-vue": "^10.5.1",
+    "eslint": "^10.0.1",
+    "eslint-plugin-vue": "^10.8.0",
     "express": "^5.1.0"
   }
 }
