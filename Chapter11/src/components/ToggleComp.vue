@@ -20,7 +20,7 @@ _value.value = $props.modelValue;
     type="checkbox"
     class="toggle"
     @change="$emit('update:modelValue', _value)"
-  />
+  >
 </template>
 
 <style scoped>

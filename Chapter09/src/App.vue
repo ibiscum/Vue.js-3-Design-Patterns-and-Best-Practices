@@ -16,11 +16,11 @@ function setValue(number) {
     <h1>Fibonacci calculator</h1>
 
     <div>
-      <FibonacciInput @input="setValue"></FibonacciInput>
+      <FibonacciInput @input="setValue" />
     </div>
 
     <div>
-      <FibonacciOutput :number="_value"></FibonacciOutput>
+      <FibonacciOutput :number="_value" />
     </div>
   </div>
 </template>

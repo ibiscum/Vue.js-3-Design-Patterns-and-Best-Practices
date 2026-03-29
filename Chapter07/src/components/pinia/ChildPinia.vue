@@ -7,9 +7,14 @@ const $store = useCounterStore();
   <div class="padding with-background">
     <h4>Child component</h4>
     <code :class="{ red: !$store.inRange }">{{ $store }}</code>
-    <hr />
-    <button @click="$store.increment()">Increment</button>
-    <button @click="$store.decrement()" :disabled="!$store.inRange">
+    <hr>
+    <button @click="$store.increment()">
+      Increment
+    </button>
+    <button
+      :disabled="!$store.inRange"
+      @click="$store.decrement()"
+    >
       Decrement
     </button>
   </div>

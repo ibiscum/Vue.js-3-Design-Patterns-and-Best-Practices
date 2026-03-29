@@ -1,5 +1,18 @@
 <script setup>
-const $props = defineProps(["counter", "title"]),
+const $props = defineProps(
+  {
+    counter: {
+    type: Number,
+    optional: true,
+    default: 0
+  },
+    
+    title: {
+    type: String,
+    optional: true,
+    default: 'Default Label'
+  }
+  }),
   $emit = defineEmits(["increment"]);
 
 function incrementCounter() {
@@ -15,7 +28,9 @@ function incrementCounter() {
       <span class="badge">{{ $props.counter }}</span>
     </div>
     <div>
-      <button @click="incrementCounter()">Increment</button>
+      <button @click="incrementCounter()">
+        Increment
+      </button>
     </div>
   </div>
 </template>

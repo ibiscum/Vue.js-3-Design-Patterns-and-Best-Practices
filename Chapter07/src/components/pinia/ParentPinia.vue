@@ -17,17 +17,20 @@ const $store = useCounterStore();
         {{ $store }}
       </code>
       <div class="semi-padding">
-        <button @click="$store.increment">Increment</button>
-        <button @click="$store.decrement" :disabled="!$store.inRange">
+        <button @click="$store.increment">
+          Increment
+        </button>
+        <button
+          :disabled="!$store.inRange"
+          @click="$store.decrement"
+        >
           Decrement
         </button>
-        <span v-show="!$store.inRange"
-          >Allowed range are natural numbers including zero</span
-        >
+        <span v-show="!$store.inRange">Allowed range are natural numbers including zero</span>
       </div>
 
       <div class="padding flex-container flex-wrap">
-        <Child></Child>
+        <Child />
       </div>
     </div>
   </div>

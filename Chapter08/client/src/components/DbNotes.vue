@@ -53,13 +53,26 @@ function loadNotes() {
   <div class="notes-container">
     <section>
       <h3>New note</h3>
-      <input v-model="_note.title" type="text" placeholder="Title" />
-      <textarea v-model="_note.text" placeholder="Note text..." />
-      <button @click="saveNote()">Save</button>
+      <input
+        v-model="_note.title"
+        type="text"
+        placeholder="Title"
+      >
+      <textarea
+        v-model="_note.text"
+        placeholder="Note text..."
+      />
+      <button @click="saveNote()">
+        Save
+      </button>
     </section>
     <section>
       <h3>Notes</h3>
-      <div v-for="n in _notes" :key="n.id" class="flex-container flex-justify">
+      <div
+        v-for="n in _notes"
+        :key="n.id"
+        class="flex-container flex-justify"
+      >
         <a
           class="flex-grow"
           :class="{ selected: n.id == _selected.id }"

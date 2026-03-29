@@ -23,12 +23,14 @@ function testWebWorker() {
 <template>
   <div class="padded">
     <h1>Chapter 8 - Multithreading with Web Workers</h1>
-    <hr />
+    <hr>
 
     <h2>Simple Web Worker test</h2>
     <p>Send the request to the Web Worker, and it will answer in 3 seconds.</p>
     <div class="flex-container padded">
-      <button @click="testWebWorker()">Send request</button>
+      <button @click="testWebWorker()">
+        Send request
+      </button>
       <div class="padded">
         {{ _message }}
       </div>

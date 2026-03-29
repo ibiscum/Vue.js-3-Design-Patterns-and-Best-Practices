@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import ChildComponent from "./Child.vue";
+import ChildComponent from "./ChildBasic.vue";
 
 const _counter = ref(0);
 
@@ -25,7 +25,9 @@ function incrementCounter() {
           <strong>Counter </strong>
           <span class="badge">{{ _counter }}</span>
         </div>
-        <button @click="incrementCounter()">Increment</button>
+        <button @click="incrementCounter()">
+          Increment
+        </button>
       </div>
 
       <section class="children">
@@ -33,17 +35,17 @@ function incrementCounter() {
           title="Child component 1"
           :counter="_counter"
           @increment="incrementCounter()"
-        ></ChildComponent>
+        />
         <ChildComponent
           title="Child component 2"
           :counter="_counter"
           @increment="incrementCounter()"
-        ></ChildComponent>
+        />
         <ChildComponent
           title="Child component 3"
           :counter="_counter"
           @increment="incrementCounter()"
-        ></ChildComponent>
+        />
       </section>
     </section>
   </div>

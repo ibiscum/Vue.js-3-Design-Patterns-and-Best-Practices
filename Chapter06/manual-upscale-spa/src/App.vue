@@ -53,10 +53,14 @@ function handleAppInstalled() {
     </ul>
 
     <p v-show="_install_ready && !_app_installed">
-      Install this app here <button @click="installPWA()">[ Install ]</button>
+      Install this app here <button @click="installPWA()">
+        [ Install ]
+      </button>
     </p>
 
-    <p v-show="_app_installed">Progressive Web Application installed</p>
+    <p v-show="_app_installed">
+      Progressive Web Application installed
+    </p>
   </div>
 </template>
 

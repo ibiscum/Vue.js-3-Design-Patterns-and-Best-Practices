@@ -16,8 +16,14 @@ function sendEvent() {
 
 <template>
   <div class="input-field">
-    <input type="number" min="0" v-model="_value" />
-    <button @click="sendEvent()">Calculate</button>
+    <input
+      v-model="_value"
+      type="number"
+      min="0"
+    >
+    <button @click="sendEvent()">
+      Calculate
+    </button>
   </div>
 </template>
 

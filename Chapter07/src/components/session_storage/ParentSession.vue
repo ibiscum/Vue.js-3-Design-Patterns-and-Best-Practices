@@ -23,15 +23,18 @@ try {
     <div class="with-background padding flex-container">
       <div>
         <h4>Value in sessionStorage</h4>
-        <input type="number" v-model="$sessionStorage.counter" />
+        <input
+          v-model="$sessionStorage.counter"
+          type="number"
+        >
       </div>
       <div class="side-padding">
         <h4>Reactive value, in sync with session storage</h4>
         <h1>Counter: {{ $sessionStorage.counter }}</h1>
       </div>
       <div class="padding">
-        <ChildSessionVue></ChildSessionVue>
-        <ChildSessionVue></ChildSessionVue>
+        <ChildSessionVue />
+        <ChildSessionVue />
       </div>
     </div>
   </div>

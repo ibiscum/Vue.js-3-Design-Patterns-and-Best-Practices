@@ -117,15 +117,23 @@ function saveProject() {
     <!-- Project name -->
     <div class="header-container">
       <h1>{{ _project_name }}</h1>
-      <button @click="deleteProject()">Delete project</button>
+      <button @click="deleteProject()">
+        Delete project
+      </button>
     </div>
 
     <!-- Summary -->
-    <TodoSummary :items="_items" class="w3-margin-bottom"></TodoSummary>
+    <TodoSummary
+      :items="_items"
+      class="w3-margin-bottom"
+    />
 
     <!-- Filter bar -->
     <div class="w3-margin-bottom">
-      <TodoFilter v-model="_filter" class="flex-grow"></TodoFilter>
+      <TodoFilter
+        v-model="_filter"
+        class="flex-grow"
+      />
     </div>
 
     <!-- Todo list -->
@@ -137,28 +145,39 @@ function saveProject() {
       @delete="deleteItem"
     >
       <button
-        @click="showModal(true)"
         class="w3-button w3-blue w3-round-xxlarge"
+        @click="showModal(true)"
       >
-        <i class="fa-solid fa-square-plus"></i>
+        <i class="fa-solid fa-square-plus" />
         New item
       </button>
     </TodoList>
 
     <!-- Modals -->
-    <Modal name="newEditItem" title="To Do Item">
-      <TodoItemForm v-model="_item"></TodoItemForm>
+    <Modal
+      name="newEditItem"
+      title="To Do Item"
+    >
+      <TodoItemForm v-model="_item" />
     </Modal>
 
-    <Modal name="deleteItem" title="Delete To-Do Item">
+    <Modal
+      name="deleteItem"
+      title="Delete To-Do Item"
+    >
       <p>
-        This action will delete the item:<br />
+        This action will delete the item:<br>
         <strong>{{ _item.text }}</strong>
       </p>
-      <p class="w3-text-red w3-pale-red">This action cannot be undone.</p>
+      <p class="w3-text-red w3-pale-red">
+        This action cannot be undone.
+      </p>
     </Modal>
 
-    <Modal name="deleteProject" title="Delete the Project">
+    <Modal
+      name="deleteProject"
+      title="Delete the Project"
+    >
       <h3>Attention</h3>
       <p class="w3-pale-red w3-text-red w3-padding">
         This action cannot be undone. Please confirm.

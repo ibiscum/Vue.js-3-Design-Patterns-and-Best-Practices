@@ -25,7 +25,9 @@ function updateProjects() {
 
 <template>
   <section class="w3-blue">
-    <h4 class="w3-row-padding">To-Do Projects</h4>
+    <h4 class="w3-row-padding">
+      To-Do Projects
+    </h4>
 
     <RouterLink
       :to="{ name: 'landing' }"
@@ -36,7 +38,10 @@ function updateProjects() {
     </RouterLink>
 
     <!-- Projecs -->
-    <div v-for="p in _projects" :key="p.id">
+    <div
+      v-for="p in _projects"
+      :key="p.id"
+    >
       <RouterLink
         :to="{ name: 'project', params: { id: p.id } }"
         active-class="w3-yellow"

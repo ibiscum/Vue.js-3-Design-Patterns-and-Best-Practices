@@ -11,7 +11,11 @@ import Child from "./Child.vue";
     </p>
 
     <div class="flex-container">
-      <Child v-for="i in 4" :key="i" :title="'Child ' + i"></Child>
+      <Child
+        v-for="i in 4"
+        :key="i"
+        :title="'Child ' + i"
+      />
     </div>
   </div>
 </template>

@@ -20,9 +20,9 @@ const state = useState();
       </div>
 
       <div class="flex-container">
-        <ChildVue></ChildVue>
-        <ChildVue></ChildVue>
-        <ChildVue></ChildVue>
+        <ChildVue />
+        <ChildVue />
+        <ChildVue />
       </div>
     </div>
   </div>

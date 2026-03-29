@@ -7,12 +7,16 @@ const $state = useState();
 <template>
   <div class="padding with-background">
     <div class="flex-container">
-      <strong>State: </strong><br />
+      <strong>State: </strong><br>
       <pre>{{ $state }}</pre>
     </div>
     <div class="flex-container flex-wrap">
-      <button @click="$state.counter++">Increment</button>
-      <button @click="$state.counter--">Decrement</button>
+      <button @click="$state.counter++">
+        Increment
+      </button>
+      <button @click="$state.counter--">
+        Decrement
+      </button>
     </div>
   </div>
 </template>

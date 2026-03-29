@@ -45,38 +45,72 @@ function addToDo() {
         autofocus
         placeholder="Type here your to-do item..."
         @keyup.enter="addToDo()"
-      />
-      <button class="w3-button w3-gray" @click="clearToDo()">
+      >
+      <button
+        class="w3-button w3-gray"
+        @click="clearToDo()"
+      >
         <i class="fa-solid fa-times" />
       </button>
-      <button class="w3-button w3-blue" @click="addToDo()">
+      <button
+        class="w3-button w3-blue"
+        @click="addToDo()"
+      >
         <i class="fa-solid fa-plus" />
       </button>
     </div>
 
     <!-- List of pending items -->
-    <div class="w3-padding w3-blue">Pending ({{ _pending.length }})</div>
-    <div v-for="todo in _pending" :key="todo.id" class="w3-padding">
+    <div class="w3-padding w3-blue">
+      Pending ({{ _pending.length }})
+    </div>
+    <div
+      v-for="todo in _pending"
+      :key="todo.id"
+      class="w3-padding"
+    >
       <label>
-        <input v-model="todo.checked" type="checkbox" />
+        <input
+          v-model="todo.checked"
+          type="checkbox"
+        >
         <span class="w3-margin-left">
           {{ todo.text }}
         </span>
       </label>
     </div>
-    <div v-show="_pending.length == 0" class="w3-padding">No tasks</div>
+    <div
+      v-show="_pending.length == 0"
+      class="w3-padding"
+    >
+      No tasks
+    </div>
 
     <!-- List of completed tasks -->
-    <div class="w3-padding w3-blue">Completed ({{ _done.length }})</div>
-    <div v-for="todo in _done" :key="todo.id" class="w3-padding">
+    <div class="w3-padding w3-blue">
+      Completed ({{ _done.length }})
+    </div>
+    <div
+      v-for="todo in _done"
+      :key="todo.id"
+      class="w3-padding"
+    >
       <label>
-        <input v-model="todo.checked" type="checkbox" />
+        <input
+          v-model="todo.checked"
+          type="checkbox"
+        >
         <span class="w3-margin-left">
           {{ todo.text }}
         </span>
       </label>
     </div>
-    <div v-show="_done.length == 0" class="w3-padding">No tasks</div>
+    <div
+      v-show="_done.length == 0"
+      class="w3-padding"
+    >
+      No tasks
+    </div>
   </div>
 </template>
 

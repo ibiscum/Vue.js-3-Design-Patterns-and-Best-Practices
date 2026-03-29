@@ -19,9 +19,14 @@ function showModal() {
 
 <template>
   <div class="app">
-    <button @click="showModal">Show modal</button>
+    <button @click="showModal">
+      Show modal
+    </button>
     <div>{{ _result }}</div>
-    <ModalComp name="myModal" title="Modal example">
+    <ModalComp
+      name="myModal"
+      title="Modal example"
+    >
       Some important content here
     </ModalComp>
   </div>

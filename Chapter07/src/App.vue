@@ -18,23 +18,23 @@ import SessionExperiment from "./components/session_storage/ParentSession.vue";
 
     <section class="semi-padding">
       <h2>Basic communication</h2>
-      <ParentBasic></ParentBasic>
+      <ParentBasic />
     </section>
     <section class="semi-padding">
       <h2>Message bus</h2>
-      <MessageBus></MessageBus>
+      <MessageBus />
     </section>
     <section class="semi-padding">
       <h2>Simple Reactive state</h2>
-      <SimpleState></SimpleState>
+      <SimpleState />
     </section>
     <section class="semi-padding">
       <h2>Pinia store</h2>
-      <PiniaStore></PiniaStore>
+      <PiniaStore />
     </section>
     <section class="semi-padding">
       <h2>Session Storage reactive experiment</h2>
-      <SessionExperiment></SessionExperiment>
+      <SessionExperiment />
     </section>
   </div>
 </template>

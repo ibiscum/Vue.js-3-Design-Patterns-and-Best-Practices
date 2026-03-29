@@ -2,7 +2,13 @@
 import MessageBus from "../../services/MessageBus";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
-const $props = defineProps(["title"]),
+const $props = defineProps({
+  title: {
+    type: String,
+    optional: true,
+    default: 'default title'
+  }
+}),
   message = ref("''");
 
 onMounted(() => {
@@ -32,7 +38,9 @@ function sendMessage() {
       </div>
     </div>
     <div class="semi-padding">
-      <button @click="sendMessage()">Send message</button>
+      <button @click="sendMessage()">
+        Send message
+      </button>
     </div>
   </div>
 </template>
