@@ -7,7 +7,7 @@
     "lint": "eslint --fix ."
   },
   "dependencies": {
-    "eslint": "^9.39.4",
+    "eslint": "^10.1.0",
     "eslint-plugin-vue": "^10.8.0",
     "globals": "^17.4.0"
   }
